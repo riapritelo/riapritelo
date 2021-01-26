@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .text-shadow-gray-800 {
+    --tw-bg-opacity: 1;
+    text-shadow: 0px 0px 3px rgba(17, 24, 39, var(--tw-bg-opacity));
+  }
+}
