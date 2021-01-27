@@ -179,33 +179,38 @@
                     <strong class="text-bold">Mario Spallino </strong><small class="text-sm">(attore, fondatore della compagnia teatrale di Emergency)</small></span>
                 <span class="pr-2">
                     <strong class="text-bold">Sara Soncini </strong><small class="text-sm">(anglista UniPi)</small></span>
-                
+
 
             </section>
 
             <section class="md:p-8 sm:p-0 md:text-xl sm:text-base justify-center bg-gray-100 flex items-center leading-relaxed">
                 <a class="bg-gray-100 text-bold m-16 rounded-md border-gray-300 border-solid border-2 px-16 py-4" href="https://form.jotform.com/210246913444350" target="_blank" name="firma">Firma la petizione</a>
             </section>
-            <script>
-                // YE OLDE VANILLA JS
+           <script>
+            // YE OLDE VANILLA JS
             let r = new XMLHttpRequest();
             r.open("GET", "/src/count.json", true);
             r.onreadystatechange = function () {
-              if (r.readyState != 4 || r.status != 200) return;
-              let target = JSON.parse(r.responseText).signatures,
-                  timeslice = 3000 / target,
-                  spacing = String(target).length,
-                  counter = 0,
-                  badge = document.querySelector('.badge');
-            const doCount = () => {
-                let value = Math.round(counter),
-                    pad = "0".repeat(spacing - String(value).length);
-                badge.innerText = pad + value;
-                counter += timeslice;
-                if (counter < target)
-                    window.requestAnimationFrame(doCount);
-               }
-               doCount();
+                if (r.readyState != 4 || r.status != 200) return;
+                let target = JSON.parse(r.responseText).signatures,
+                    timeslice = target / 2000,
+                    spacing = String(target).length,
+                    counter = 0,
+                    previous = -1,
+                    badge = document.querySelector('.badge');
+                const doCount = (t) => {
+                    if (previous < 0)
+                        previous = t;
+                    let steps = (t - previous);
+                    counter += steps * timeslice;
+                    previous = t;
+                    let value = Math.min(Math.round(counter), target),
+                        pad = "0".repeat(spacing - String(value).length);
+                    badge.innerText = pad + value;
+                    if (counter < target)
+                        window.requestAnimationFrame(doCount);
+                }
+                window.requestAnimationFrame(doCount);
 
             };
             r.send();
