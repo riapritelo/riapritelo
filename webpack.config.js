@@ -42,12 +42,12 @@ module.exports = {
       template: "src/index.html",
     }),
     /// Enable images folder
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: "src/images",
-    //     to: "images",
-    //   },
-    // ]),
+    new CopyWebpackPlugin([
+      {
+        from: "src/images",
+        to: "images",
+      },
+    ]),
     new PurgecssPlugin({
       paths: glob.sync([path.join(__dirname, "src/**/*.html")]),
       extractors: [
