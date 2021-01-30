@@ -17,7 +17,10 @@ class TailwindExtractor {
 }
 
 module.exports = {
-  entry: "./src/css/tailwind.src.css",
+  entry: [
+      "./src/css/tailwind.src.css",
+      "./src/brain.js",
+  ],
   mode: process.env.NODE_ENV,
   module: {
     rules: [

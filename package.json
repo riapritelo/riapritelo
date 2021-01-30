@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.0.2",
+    "axios": "^0.21.1",
     "countup.js": "^2.0.7",
-    "zeptojs": "^1.1.4"
+    "lodash": "^4.17.20"
   }
 }
