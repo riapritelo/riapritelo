@@ -91,7 +91,7 @@
                 <p class="p-8 md:pt-2 sm:pt-0">È una necessità, è un impegno verso la città e verso chi negli scorsi anni vi ha profuso amore e dedizione. Come l’acqua, come l’aria.</p>
             </div>    </section>
             <section class="p-8 md:text-xl sm:text-base justify-center leading-loose">
-                <h2 class="text-2xl py-16 font-bold">Primi Firmatari</h2>
+                <h2 class="text-2xl pt-16 pb-8 font-bold">Primi Firmatari</h2>
                 <span class="pr-2">
                     <strong class="text-bold">Salvatore Settis </strong><small class="text-sm">(archeologo e storico dell’arte, SNS)</small></span>
                 <span class="pr-2">
@@ -185,150 +185,32 @@
                 <span class="pr-2">
                     <strong class="text-bold">Sara Soncini </strong><small class="text-sm">(anglista UniPi)</small></span>
                 <span class="pr-2">
-                    <strong class="text-bold">Mamadou Dioume </strong><small class="text-sm">(attore-formatore Peter Brook)</small></span>                
+                    <strong class="text-bold">Mamadou Dioume </strong><small class="text-sm">(attore-formatore Peter Brook)</small></span>
                 <span class="pr-2">
-                    <strong class="text-bold">Ilaria Gaspari </strong><small class="text-sm">(scrittrice)</small></span>               
+                    <strong class="text-bold">Ilaria Gaspari </strong><small class="text-sm">(scrittrice)</small></span>
                 <span class="pr-2">
-                    <strong class="text-bold">Renata Pepicelli </strong><small class="text-sm">(storica UniPi)</small></span>               
+                    <strong class="text-bold">Renata Pepicelli </strong><small class="text-sm">(storica UniPi)</small></span>
                 <span class="pr-2">
-                    <strong class="text-bold">Ilaria Pavan </strong><small class="text-sm">(storica UniPi)</small></span>            
+                    <strong class="text-bold">Ilaria Pavan </strong><small class="text-sm">(storica UniPi)</small></span>
                 <span class="pr-2">
-                    <strong class="text-bold">Max Collini </strong><small class="text-sm">(musicista)</small></span>       
+                    <strong class="text-bold">Max Collini </strong><small class="text-sm">(musicista)</small></span>
                 <span class="pr-2">
                     <strong class="text-bold">Legambiente Pisa </strong></span>
                  <span class="pr-2">
-                    <strong class="text-bold">Daniele Ninarello </strong><small class="text-sm">(danzatore e coreografo)</small></span>  
+                    <strong class="text-bold">Daniele Ninarello </strong><small class="text-sm">(danzatore e coreografo)</small></span>
 
             </section>
-
-            <section class="md:p-8 sm:p-0 md:text-xl sm:text-base justify-center bg-gray-100 flex items-center leading-relaxed">
-                <a class="bg-gray-100 text-bold m-16 rounded-md border-gray-300 border-solid border-2 px-16 py-4" href="https://form.jotform.com/210246913444350" target="_blank" name="firma">Firma la petizione</a>
+            <section class="p-8 sm:text-sm justify-center leading-loose bg-gray-100">
+                <h2 class="text-2xl pt-16 pb-8 font-bold">Firmatari</h2>
+                <ul id="signatures" class="grid md:grid-cols-4 md:gap-4">
+                </ul>
             </section>
-        
-        
-            <section class="p-8 md:text-xl sm:text-base text-center leading-loose">
-                <h2 class="text-2xl py-16 font-bold">Tutti i Firmatari</h2>
-                <iframe src="https://eu.jotform.com/table/210271700999054" frameborder="0" style="width: 100%; max-width: 640px; height: 100%; min-height: 500px; border:none; display: inline-block" scrolling="auto"></iframe>
+            <!-- DO NOT REMOVE -->
+            <section id="bottom-viewport" class="bg-gray-100 p-8">
+                <p class="text-center">Grazie. &#9829;</p>
             </section>
-           <script>
-            // YE OLDE VANILLA JS
-            let r = new XMLHttpRequest();
-            r.open("GET", "/src/count.json", true);
-            r.onreadystatechange = function () {
-                if (r.readyState != 4 || r.status != 200) return;
-                let target = JSON.parse(r.responseText).signatures,
-                    timeslice = target / 2000,
-                    spacing = String(target).length,
-                    counter = 0,
-                    previous = -1,
-                    badge = document.querySelector('.badge');
-                const doCount = (t) => {
-                    if (previous < 0)
-                        previous = t;
-                    let steps = (t - previous);
-                    counter += steps * timeslice;
-                    previous = t;
-                    let value = Math.min(Math.round(counter), target),
-                        pad = "0".repeat(spacing - String(value).length);
-                    badge.innerText = pad + value;
-                    if (counter < target)
-                        window.requestAnimationFrame(doCount);
-                }
-                window.requestAnimationFrame(doCount);
 
-            };
-            r.send();
-            </script>
-<!--
- █        ▀                                         ▄           ▀▀█
- █ ▄▄   ▄▄▄     ▄▄▄           ▄▄▄   ▄   ▄  ▄ ▄▄   ▄▄█▄▄           █     ▄▄▄    ▄▄▄   ▄ ▄▄    ▄▄▄    ▄▄▄
- █▀  █    █    █▀  ▀         █   ▀  █   █  █▀  █    █             █    █▀  █  █▀ ▀█  █▀  █  █▀  █  █   ▀
- █   █    █    █              ▀▀▀▄  █   █  █   █    █             █    █▀▀▀▀  █   █  █   █  █▀▀▀▀   ▀▀▀▄
- █   █  ▄▄█▄▄  ▀█▄▄▀         ▀▄▄▄▀  ▀▄▄▀█  █   █    ▀▄▄           ▀▄▄  ▀█▄▄▀  ▀█▄█▀  █   █  ▀█▄▄▀  ▀▄▄▄▀
 
-    <iframe
-      id="JotFormIFrame-210246913444350"
-      title="Il Teatro delle Scelte. Riaprite il Teatro Rossi Aperto!"
-      onload="window.parent.scrollTo(0,0)"
-      allowtransparency="true"
-      allowfullscreen="true"
-      allow="geolocation; microphone; camera"
-      src="https://form.jotform.com/210246913444350"
-      frameborder="0"
-      style="
-      min-width: 100%;
-      height:539px;
-      border:none;"
-      scrolling="no"
-    >
-    </iframe>
-    <script type="text/javascript">
-      var ifr = document.getElementById("JotFormIFrame-210246913444350");
-      if (ifr) {
-        var src = ifr.src;
-        var iframeParams = [];
-        if (window.location.href && window.location.href.indexOf("?") > -1) {
-          iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-        }
-        if (src && src.indexOf("?") > -1) {
-          iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-          src = src.substr(0, src.indexOf("?"))
-        }
-        iframeParams.push("isIframeEmbed=1");
-        ifr.src = src + "?" + iframeParams.join('&');
-      }
-      window.handleIFrameMessage = function(e) {
-        if (typeof e.data === 'object') { return; }
-        var args = e.data.split(":");
-        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-        if (!iframe) { return; }
-        switch (args[0]) {
-          case "scrollIntoView":
-            iframe.scrollIntoView();
-            break;
-          case "setHeight":
-            iframe.style.height = args[1] + "px";
-            break;
-          case "collapseErrorPage":
-            if (iframe.clientHeight > window.innerHeight) {
-              iframe.style.height = window.innerHeight + "px";
-            }
-            break;
-          case "reloadPage":
-            window.location.reload();
-            break;
-          case "loadScript":
-            var src = args[1];
-            if (args.length > 3) {
-                src = args[1] + ':' + args[2];
-            }
-            var script = document.createElement('script');
-            script.src = src;
-            script.type = 'text/javascript';
-            document.body.appendChild(script);
-            break;
-          case "exitFullscreen":
-            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
-            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
-            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
-            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
-            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
-            break;
-        }
-        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
-          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
-        }
-      };
-      if (window.addEventListener) {
-        window.addEventListener("message", handleIFrameMessage, false);
-      } else if (window.attachEvent) {
-        window.attachEvent("onmessage", handleIFrameMessage);
-      }
-      </script>
-
--->
     <script type="text/javascript" src="main.js"></script></body>
 
 </html>

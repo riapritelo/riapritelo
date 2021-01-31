@@ -247,6 +247,13 @@ p {
  * results in a loss of the default `button` focus styles.
  */
 
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /**
  * Tailwind custom reset styles
  */
@@ -366,13 +373,6 @@ a {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-
-iframe,
-object {
-  display: block;
-  vertical-align: middle;
-}
-
 /**
  * Constrain images and videos to the parent width and preserve
  * their instrinsic aspect ratio.
@@ -441,12 +441,12 @@ object {
   border-width: 2px;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .flex-col {
@@ -514,10 +514,6 @@ object {
   margin: 2rem;
 }
 
-.m-16 {
-  margin: 4rem;
-}
-
 .max-w-prose {
   max-width: 65ch;
 }
@@ -543,11 +539,6 @@ object {
   padding-bottom: 1rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -559,6 +550,14 @@ object {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 * {
@@ -646,6 +645,11 @@ object {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .sm\:text-base {
@@ -738,5 +742,13 @@ object {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
