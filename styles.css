@@ -74,6 +74,11 @@ Grouping content
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 */
 
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
 /*
 Text-level semantics
 ====================
@@ -238,6 +243,7 @@ Add the correct display in Chrome and Safari.
 
 h1,
 h2,
+hr,
 p {
   margin: 0;
 }
@@ -318,6 +324,10 @@ body {
 /*
  * Ensure horizontal rules are visible by default
  */
+
+hr {
+  border-top-width: 1px;
+}
 
 /**
  * Undo the `border-style: none` reset that Normalize applies to images so that
