@@ -24,6 +24,9 @@
     "autoprefixer": "^10.0.2",
     "axios": "^0.21.1",
     "countup.js": "^2.0.7",
-    "lodash": "^4.17.20"
+    "leaflet": "^1.7.1",
+    "leaflet-providers": "^1.11.0",
+    "lodash": "^4.17.20",
+    "url-loader": "^4.1.1"
   }
 }

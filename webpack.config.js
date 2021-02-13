@@ -16,6 +16,15 @@ class TailwindExtractor {
   }
 }
 
+
+function collectSafelist() {
+  return {
+    standard: ['leaflet', /leaflet-/],
+    deep: [/leaflet-/],
+    greedy: [/leaflet-/]
+  }
+}
+
 module.exports = {
   entry: [
       "./src/css/tailwind.src.css",
@@ -34,6 +43,10 @@ module.exports = {
           ],
         }),
       },
+      {
+        test: /node_modules\/.*\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        loader: "url-loader",
+      },
     ],
   },
   plugins: [
@@ -51,14 +64,5 @@ module.exports = {
         to: "images",
       },
     ]),
-    new PurgecssPlugin({
-      paths: glob.sync([path.join(__dirname, "src/**/*.html")]),
-      extractors: [
-        {
-          extractor: TailwindExtractor,
-          extensions: ["html", "js"],
-        },
-      ],
-    }),
   ],
 }
